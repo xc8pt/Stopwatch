@@ -64,22 +64,35 @@ namespace NotPet
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            richTextBox1.SelectAll();
         }
 
         private void dataTimeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            richTextBox1.Text = System.DateTime.Now.ToString();
         }
 
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.Font = fontDialog1.Font;
+            }
         }
 
         private void colorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.ForeColor = colorDialog1.Color;
+            }
+        }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Автор: Абдулин Ринат\nEmail: brolike636@gmail.com", "О программе",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 }
